@@ -21,13 +21,15 @@ Un load balancer pubblico deve stare in subnet pubbliche perche' ha bisogno dell
 - Non puo' essere chiamato da internet o da macchine esterne.
 - Per accesso esterno servono altri tipi di Service (Nodeport, Loadbalancer) o un ingress
 ## NodePort
-- Espone l'applicazione all'interno tramite una porta del node (30000-32767).
-- Non adatto per produzione, utile per test o sviluppo.
-- Accesso esterno: NODE-IP:Nodeport
+- Espone l'applicazione Kubernetes all'esterno del cluster.
+- Usa una porta del Node (range 30000–32767) accessibile da fuori.
+- Qualsiasi Node può inoltrare il traffico ai Pod corretti.
+- Usato per test e sviluppo, non consigliato in produzione.
 ## Perche' esistono i service
 - I pod cambiano ip spesso perche vengono ricreati
 - Il service offre un endpoint stabile (IP + DNS) verso un gruppo di pod.
 - Usa i label selector per decidere quali pod far vedere.
+
 
 
 
