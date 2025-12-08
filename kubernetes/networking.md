@@ -20,10 +20,11 @@ Un load balancer pubblico deve stare in subnet pubbliche perche' ha bisogno dell
 ## NodePort
 - Espone l'applicazione all'interno tramite una porta del node (30000-32767).
 - Non adatto per produzione, utile per test o sviluppo.
-- Accesso esternmo: NODE-IP:Nodeport
+- Accesso esterno: NODE-IP:Nodeport
 ## Perche' esistono i service
 - I pod cambiano ip spesso perche vengono ricreati
 - Il service offre un endpoint stabile (IP + DNS) verso un gruppo di pod.
 - Usa i label selector per decidere quali pod far vedere.
+
 
 
