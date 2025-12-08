@@ -12,11 +12,14 @@ niente IGW nessuna connessione in ingresso da internet
 Un load balancer pubblico deve stare in subnet pubbliche perche' ha bisogno dell'internet gateway 
 
 # Servicea
-## Cluster IP 
+## Cluster IP e Accesso esterno
 - E il tipo di service di default.
 - Serve per comunicazioni interne al cluster.
 - Espone i pod all'interno del cluster con un IP stabile.
 - Usato tra i microservizi (es: frontend --> backend).
+- Un service clusterIP e' raggiungibile solo dall'interno del cluster.
+- Non puo' essere chiamato da internet o da macchine esterne.
+- Per accesso esterno servono altri tipi di Service (Nodeport, Loadbalancer) o un ingress
 ## NodePort
 - Espone l'applicazione all'interno tramite una porta del node (30000-32767).
 - Non adatto per produzione, utile per test o sviluppo.
@@ -25,6 +28,7 @@ Un load balancer pubblico deve stare in subnet pubbliche perche' ha bisogno dell
 - I pod cambiano ip spesso perche vengono ricreati
 - Il service offre un endpoint stabile (IP + DNS) verso un gruppo di pod.
 - Usa i label selector per decidere quali pod far vedere.
+
 
 
 
