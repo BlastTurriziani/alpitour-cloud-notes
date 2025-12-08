@@ -1,24 +1,30 @@
 # EC2 Concetti base
 ## cos'e una EC2:
-- Una macchina virtuale nel ccloud.
+- Una macchina virtuale nel cloud.
 - Lavora come una normale VM (windows o linux).
 - puo' essere pubblica (IP pubblico) o privata (solo rete interna).
 ## AMI
 - Immagine di avvio (amazon machine image).
 - Contiene il sistema operativo + software iniziale.
 - Esempi: amazon linux, ubuntu, windows server.
-## Istance type 
+## Instance type 
 - Determina CPU, RAM, rete.
-- Famiglie: t2/t3 (general), m5 (balanced), c5 (compute), r5 (memory).
+- Famiglie principali:
+  - t2/t3: generiche, economiche
+  - m5: bilanciate
+  - c5: compute-intensive
+  - r5: memory-intensive
 
 # Sicurezza EC2 (SG + IAM Role).
 ## Security group
 - firewall per la EC2.
 - Controlla chi puo' entrare (inbound).
 - Regole stateful.
+- Best practice:permettere traffico solo da altri Security Group, non da 0.0.0.0/0 quando possibile.
 ## IAM role 
-- Mai usare chiavi nella EC2.
-- Usare IAM role per dare permessi temporanei (es: accesso a S3).
+- Mai usare chiavi statiche nella EC2.
+- Dare permessi tramite IAM Role (accesso a S3, DynamoDB, ecc).
+- Le credenziali generate dal ruolo sono temporanee e sicure.
 
 # Storage e Dischi (EBS)
 ## EBS
@@ -26,7 +32,7 @@
 - Tipi principali:
  - gp3 (generale, consigliato).
  - io1/io2 (alta IOPS, database).
- - st1/sc1 (magnetic, per stroughput).
+ - st1/sc1 (magnetic, per throughput).
 ## Caratteristiche 
 - Persistente: non sparisce se spegni la EC2.
 - Puo' essere aumentato in qualsiasi momento.
@@ -40,5 +46,10 @@
 - Usato con il load balancer.
 ## Load balancer 
 - Distribuisce traffico verso piu' EC2.
+  - ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS.
+  - NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
 - Puo' essere pubblico o privato.
+
+
+
 
