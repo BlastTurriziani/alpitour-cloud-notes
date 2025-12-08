@@ -14,6 +14,7 @@
   - m5: bilanciate
   - c5: compute-intensive
   - r5: memory-intensive
+  - I database SQL preferiscono istanze memory-optimized (es. r5) perche' sfruttano molta ram        per caching e query   
 
 # Sicurezza EC2 (SG + IAM Role).
 ## Security group
@@ -49,6 +50,7 @@
   - ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS.
   - NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
 - Puo' essere pubblico o privato.
+
 
 
 
