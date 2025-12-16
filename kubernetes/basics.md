@@ -15,7 +15,16 @@ Il replicaset ricrea i pod che muoiono.
 # deployment
 Il deployment garantisce versioni e aggiornamenti, non i pod . 
 Aggiornare un deployment crea un nuovo replicaset.
-Il deployment controlla quanti pod devono stare nel vecchio e nel nuovo replicaset durante un aggiornamento .
+Il deployment controlla quanti pod devono stare nel vecchio e nel nuovo replicaset durante un aggiornamento.
+- Il deploiment è l'oggetto che descrive come deve girare un'applicazione in kubernetes.
+- Definisce immagine, numero di repliche e strategie di aggiornamento.
+- Gestisce il ciclo di vita dell'app usando replicaset e pod.
+- Permette aggiornamenti senza downtime e rollback.
+## Deployment yamal campi minimi
+- image: immagine del container da eseguire.
+- replicas: numero di pod desiderati.
+- selector + labels: servono a collegare Deployment/replicaSet ai pod corretti.
+- Template: definisce il pod (container, porte, env, ecc.)
 
 # ConfigMap e Secret
 ## ConfigMap 
@@ -33,4 +42,5 @@ Il deployment controlla quanti pod devono stare nel vecchio e nel nuovo replicas
 ### Differenza chiave 
 - ConfigMap = configurazione normale.
 - Secret = configurazione sensibile.
+
 
