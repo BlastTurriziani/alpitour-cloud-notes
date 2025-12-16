@@ -1,7 +1,9 @@
 # node 
 node: Macchina del cluster (fornisce CPU/RAM).
 Quando viene aggiornato un deployment il node non decide nulla replica e basta.
-
+## commento
+Pod diversi: Comunicazione tramite ip del pod o attraverso un DNS.
+Scheduler: Decide il node, dove mettere un pod in base a CPU/RAM disponibili e non in base all'ordine di creazione o il nome 
 # pod 
 Pod: Unita' base in kubernetes, ha un ip proprio e contiene uno o piu' containers.
 Kubernetes non usa i pod da soli perche' i pod muoiono facilmente.
@@ -42,5 +44,6 @@ Il deployment controlla quanti pod devono stare nel vecchio e nel nuovo replicas
 ### Differenza chiave 
 - ConfigMap = configurazione normale.
 - Secret = configurazione sensibile.
+
 
 
