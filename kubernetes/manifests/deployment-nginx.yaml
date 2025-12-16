@@ -1,4 +1,7 @@
 # spiegazione file yaml commentata 
+(I manifest Kubernetes sono stati scritti e documentati a scopo didattico,
+senza applicazione su un cluster reale.)
+
 # Prima parte
 apiVersion: apps/v1  # Qui stiamo creando un deployment
 kind: Deployment
@@ -26,3 +29,19 @@ spec: # Kubernetes mantiene sempre due pod attivi
         ports: # Porta esposta dal container (non accessibile senza Service)
 
         - containerPort: 80
+
+# Service YAML minimo (ClusterIP)
+
+apiVersion: v1
+kind: Service # Oggetto che crea un endpoint stabile per raggiungere i pod.
+metadata:
+ name: nginx-service 
+spec:
+ type: ClusterIP # Accessibile solo dentro il cluster 
+ selector: # App:nginx -> "aggancia i pod che hanno labels: app: nginx (devono combaciare con il deployment) 
+   app: nginx
+ports:
+- name: http
+   port: 80 # Porta del service (quella a cui ti colleghi)
+   targetPort: 80 # TargetPort:80 -> porta nel container nei pod (containerport) 
+   
