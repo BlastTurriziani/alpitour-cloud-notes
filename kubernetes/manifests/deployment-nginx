@@ -1,0 +1,28 @@
+# spiegazione file yaml commentata 
+# Prima parte
+apiVersion: apps/v1  # Qui stiamo creando un deployment
+kind: Deployment
+# Seconda parte 
+metadata: #nome logico del deployment (lo si usa nei comandi)
+  name: nginx-deployment
+# Terza parte
+spec: # Kubernetes mantiene sempre due pod attivi 
+  replicas: 2 # (se uno muore lo ricrea)
+# Quarta parte
+  selector: # Il deployment controlla solo i pod con app=nginx
+    matchLabels: # Deve combaciare con le label sotto
+      app: nginx
+# Quinta parte
+  template: # Qui definisci che pod creare 
+    metadata: # le label servono a Deployment e Service (dopo)
+      labels:
+        app: nginx
+# Sesta parte
+    spec: # Container 
+      containers:
+      - name: nginx # Nome del container
+        image: nginx:latest # Immagine Docker
+# Settima parte 
+        ports: # Porta esposta dal container (non accessibile senza Service)
+
+        - containerPort: 80
