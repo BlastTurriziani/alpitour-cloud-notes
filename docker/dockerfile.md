@@ -7,6 +7,9 @@
 * EXPOSE 80
 # comando che parte quando il container si avvia(senza questo --> container morto subito)
 * CMD ["nginx", "-g", "deamon off;"]
-
+## concetto chiave
+Dockerfile → ricetta
+Image → risultato
+Container → istanza in esecuzione
 
 
