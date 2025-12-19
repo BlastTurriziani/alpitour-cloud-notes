@@ -1,0 +1,10 @@
+# ConfigMap YAML minimale
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  APP_ENV: production
+  APP_NAME: nginx-demo
+# non gira nulla: solo dati
