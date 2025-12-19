@@ -1,5 +1,14 @@
 # Docker file 
 
+# Scrivo il Dockerfile, costruisco l’immagine, Kubernetes crea e gestisce i container.
+#Dockerfile
+- file di testo con le istruzioni per costruire un’immagine
+#Immagine Docker
+- risultato del Dockerfile, immutabile e versionata
+#Container
+- istanza in esecuzione dell’immagine
+- gestita da Kubernetes, volatile (può morire e rinascere)
+
 # FROM
 From permette di utilizzare ambienti standard e già pronti, riducendo il tempo, errori e problemi di compatibilità
 
@@ -37,4 +46,5 @@ CMD ["nginx", "-g", "daemon off;"]
 docker run -p 8080:80 \
   -v $(pwd)/html:/usr/share/nginx/html \ <- run time
   nginx
+
 
