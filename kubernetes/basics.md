@@ -16,7 +16,6 @@
 - Il replicaset garantisce che ci sia sempre il numero desiderato di pod.
 - Il replicaset ricrea i pod che muoiono.
 
-
 # deployment
 - Il deployment garantisce versioni e aggiornamenti, non i pod . 
 - Aggiornare un deployment crea un nuovo replicaset.
@@ -47,6 +46,7 @@
 #Differenza chiave 
 - ConfigMap = configurazione normale.
 - Secret = configurazione sensibile.
+
 
 
 
