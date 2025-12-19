@@ -1,3 +1,6 @@
+# Kubernetes
+- Kubernetes non ripara container, li sostituisce.
+
 # node 
 node: Macchina del cluster (fornisce CPU/RAM).
 Quando viene aggiornato un deployment il node non decide nulla replica e basta.
@@ -44,6 +47,7 @@ Il deployment controlla quanti pod devono stare nel vecchio e nel nuovo replicas
 ### Differenza chiave 
 - ConfigMap = configurazione normale.
 - Secret = configurazione sensibile.
+
 
 
 
