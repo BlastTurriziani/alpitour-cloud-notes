@@ -17,11 +17,11 @@ From permette di utilizzare ambienti standard e già pronti, riducendo il tempo,
 - durante la build i file ./html finiscono nell'immagine
 - ogni container avrà sempre quegli stessi file
 - COPY = build time -> immagine immutabile
-## ottimo per:
+#ottimo per:
 - produzione
 - app stabili
 - immagini versionate
-## ES:
+#ES:
 FROM nginx:latest
 COPY ./html /usr/share/nginx/html <-- build time
 EXPOSE 80
@@ -33,12 +33,12 @@ CMD ["nginx", "-g", "daemon off;"]
 - i file arrivanno quando il container parte
 - se cambi html/ -> cambia subito il sito
 - Volume = run time -> file esterni e modificabili
-## Tipico di:
+#Tipico di:
 - sviluppo
 - test
 - debug
-# ES:
-#dockerfile
+#ES:
+# dockerfile
 FROM nginx:latest
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
@@ -46,5 +46,6 @@ CMD ["nginx", "-g", "daemon off;"]
 docker run -p 8080:80 \
   -v $(pwd)/html:/usr/share/nginx/html \ <- run time
   nginx
+
 
 
