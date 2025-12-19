@@ -3,14 +3,15 @@
 - I secret non fanno parte dell'imagine Docker.
 - I valori sono in base64 (encoding, non cifratura).
 
-#Perchè esiste 
+## Perchè esiste 
 - L'immagine docker è immutabile.
 - Le credenziali non devono stare nel codice o nell'immagine.
 
-#Quando viene usato 
+## Quando viene usato 
 - Il secret viene letto quando il Pod viene creato.
 - Se il secret cambia, i Pod devono essere ricreati per usare i nuovi valori.
 
-#Differenza con ConfigMap
+## Differenza con ConfigMap
 - ConfigMap = configurazione normale
 - Secret = configurazione sensibile  
+
