@@ -39,13 +39,13 @@
 - Contiene dati sensibili come password, token e certificati.
 - I valori sono codificati in base64 (non super sicuri).
 - Piu' sicura per informazioni delicate rispetto alla configmap.
-
 #Come vengono usati nei pod
 - Possono essere montati come variabili d'ambiente.
 - Possono essere montati come file dentro il container.
 #Differenza chiave 
 - ConfigMap = configurazione normale.
 - Secret = configurazione sensibile.
+
 
 
 
