@@ -51,6 +51,12 @@
   - NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
 - Puo' essere pubblico o privato.
 
+# S3 - EBS - VM - Container
+- S3 = file via API
+- EBS = disco per VM
+- VM = server completo
+- Container = applicazione
+
 
 
 
