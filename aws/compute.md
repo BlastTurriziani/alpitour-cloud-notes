@@ -47,23 +47,30 @@
 - Usato con il load balancer.
 ## Load balancer *
 - Distribuisce traffico verso piu' EC2, quindi gestisce il sovraccarico delle macchine in modo da non avere down 
-## ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS. 
-- Possiamo bilanciare il carico su più applicazioni sulla stessa macchina(container).
-- Per applicazioni basate su container i load balan
-- ELB ( EC2 Load Balancer) spesso si usa un load balancer predefinito come ELB di amazon per velocità e configurazione 
-  - NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
-
 - Nel complesso possiamo impostare un load balancer interno o esterno, a seconda di dove vogliamo esporre l'applicazione se esterna o interna.
-- Ha la funzionalità di separare il traffico pubblico da quello privato. 
-- Fa dei controlli di integrità delle nostre instanze per assicurasi che funzionino tutte correttamente (siamo noi che configuriamo quello che poi lui andrà a controllare)
 - Se ci fosse un'istanza che non funziona correttamente il traffico verrà indirizzato verso una macchina funzionante.
-- Può anche imporre la persistenza con i cookies quindi l'utente parlerà con la stessa instanza nel tempo.
+- Ha la funzionalità di separare il traffico pubblico da quello privato.
+- Fa dei controlli di integrità delle nostre instanze per assicurasi che funzionino tutte correttamente (siamo noi che configuriamo quello che poi lui andrà a controllare)
+- ELB ( EC2 Load Balancer) spesso si usa un load balancer predefinito come ELB di amazon per velocità e configurazione
+- I load balancer classici sono deprecati.
+## ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS. 
+- Con ALB i server delle applicazioni non vedono direttamente l'IP del client(viene inserito in una intestazione denominata X-forwarded-for)
+- Possiamo avere load balancer su più applicazioni sulla stessa macchina(container).
+- Può anche imporre la persistenza con i cookies quindi l'utente parlerà con la stessa instanza nel tempo questa funzionalità sarà gestita fondamentalmente da ALB.
+- Per applicazioni basate su container e microservizi i load balancer sono la scelta migliore.
+- C'è una funzionalità di mappature delle porte, fondamentalmente il load balancer può rendirizzare a qualsiasi porta dinamica nel backend(si potrebbe usare un ALB con 10 applicazioni e funzionerebbe benissimo)
+- ALB può effettuare il routing con hostname e path
+- ALB è perfetto per ECS o docker
+## NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
+- Il load balancer del carico di rete ha prestazioni molto più elevate rispetto a quello delle applicazioni
+ 
 
 # S3 - EBS - VM - Container
 - S3 = file via API
 - EBS = disco per VM
 - VM = server completo
 - Container = applicazione
+
 
 
 
