@@ -3,6 +3,9 @@
 - Una macchina virtuale nel cloud.
 - Lavora come una normale VM (windows o linux).
 - puo' essere pubblica (IP pubblico) o privata (solo rete interna).
+## Client e Application
+- Errori come 4xx sono errori del client
+- Errori come 5xx sono errori dell'application(es. 503 il LB non ha più capacità o non è momentaneamente in grado di gestire la richiesta)
 ## AMI
 - Immagine di avvio (amazon machine image).
 - Contiene il sistema operativo + software iniziale.
@@ -72,6 +75,7 @@
 - EBS = disco per VM
 - VM = server completo
 - Container = applicazione
+
 
 
 
