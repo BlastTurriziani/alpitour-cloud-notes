@@ -45,17 +45,26 @@
 ## Auto scaling group (ASG)
 - Gruppo di EC2 che cresce o diminuisce in base al carico.
 - Usato con il load balancer.
-## Load balancer 
-- Distribuisce traffico verso piu' EC2.
-  - ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS.
+## Load balancer *
+- Distribuisce traffico verso piu' EC2, quindi gestisce il sovraccarico delle macchine in modo da non avere down 
+## ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS. 
+- Possiamo bilanciare il carico su più applicazioni sulla stessa macchina(container).
+- Per applicazioni basate su container i load balan
+- ELB ( EC2 Load Balancer) spesso si usa un load balancer predefinito come ELB di amazon per velocità e configurazione 
   - NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
-- Puo' essere pubblico o privato.
+
+- Nel complesso possiamo impostare un load balancer interno o esterno, a seconda di dove vogliamo esporre l'applicazione se esterna o interna.
+- Ha la funzionalità di separare il traffico pubblico da quello privato. 
+- Fa dei controlli di integrità delle nostre instanze per assicurasi che funzionino tutte correttamente (siamo noi che configuriamo quello che poi lui andrà a controllare)
+- Se ci fosse un'istanza che non funziona correttamente il traffico verrà indirizzato verso una macchina funzionante.
+- Può anche imporre la persistenza con i cookies quindi l'utente parlerà con la stessa instanza nel tempo.
 
 # S3 - EBS - VM - Container
 - S3 = file via API
 - EBS = disco per VM
 - VM = server completo
 - Container = applicazione
+
 
 
 
