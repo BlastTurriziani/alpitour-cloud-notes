@@ -53,6 +53,7 @@
 - Fa dei controlli di integrità delle nostre instanze per assicurasi che funzionino tutte correttamente (siamo noi che configuriamo quello che poi lui andrà a controllare)
 - ELB ( EC2 Load Balancer) spesso si usa un load balancer predefinito come ELB di amazon per velocità e configurazione
 - I load balancer classici sono deprecati.
+- I load balancer possono essere scalabili ma non instantaneamente(per esempio se sappiamo che per un determinato giorno ci sarà un evento particolare si quello che viene chiamato Pre-warming)
 ## ALB (Application Load Balancer) --> Layer 7, HTTP/HTTPS. 
 - Con ALB i server delle applicazioni non vedono direttamente l'IP del client(viene inserito in una intestazione denominata X-forwarded-for)
 - Possiamo avere load balancer su più applicazioni sulla stessa macchina(container).
@@ -63,13 +64,15 @@
 - ALB è perfetto per ECS o docker
 ## NLB (Network Load Balancer) --> Layer 4, TCP/UDP.
 - Il load balancer del carico di rete ha prestazioni molto più elevate rispetto a quello delle applicazioni
- 
+- Vede direttamente l'IP del client sul lato applcazione(vale solo per i LB di rete).
+
 
 # S3 - EBS - VM - Container
 - S3 = file via API
 - EBS = disco per VM
 - VM = server completo
 - Container = applicazione
+
 
 
 
