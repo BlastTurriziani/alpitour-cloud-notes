@@ -45,11 +45,12 @@
 ## Elastic IP 
 - IP pubblico statico associabile ad una EC2.
 - Utile per server che devono avere sempre lo stesso IP.
-## Auto scaling group (ASG)
+
+## Auto scaling group (ASG) *
 - Le funzionalità dell'auto scaling group sono quelli di scalare e incrementare le instanze EC2 in base al carico delle richieste e di rimuoverle in caso di cali
 - Possiamo definire un massimo e un minimo di macchine attive.
-- Usato con il load balancer.
-- 
+- Usato con il load balancer().
+
 ## Load balancer *
 - Distribuisce traffico verso piu' EC2, quindi gestisce il sovraccarico delle macchine in modo da non avere down 
 - Nel complesso possiamo impostare un load balancer interno o esterno, a seconda di dove vogliamo esporre l'applicazione se esterna o interna.
@@ -71,12 +72,12 @@
 - Il load balancer del carico di rete ha prestazioni molto più elevate rispetto a quello delle applicazioni
 - Vede direttamente l'IP del client sul lato applcazione(vale solo per i LB di rete).
 
-
 # S3 - EBS - VM - Container
 - S3 = file via API
 - EBS = disco per VM
 - VM = server completo
 - Container = applicazione
+
 
 
 
