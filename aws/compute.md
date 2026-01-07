@@ -14,7 +14,7 @@
   - m5: bilanciate
   - c5: compute-intensive
   - r5: memory-intensive
-  - I database SQL preferiscono istanze memory-optimized (es. r5) perche' sfruttano molta ram        per caching e query   
+  - I database SQL preferiscono istanze memory-optimized (es. r5) perche' sfruttano molta ram per caching e query   
 
 # Sicurezza EC2 (SG + IAM Role).
 ## Security group
@@ -56,6 +56,7 @@
 - EBS = disco per VM
 - VM = server completo
 - Container = applicazione
+
 
 
 
