@@ -50,6 +50,7 @@
 - Le funzionalità dell'auto scaling group sono quelli di scalare e incrementare le instanze EC2 in base al carico delle richieste e di rimuoverle in caso di cali
 - Possiamo definire un massimo e un minimo di macchine attive.
 - Usato con il load balancer().
+- 
 
 ## Load balancer *
 - Distribuisce traffico verso piu' EC2, quindi gestisce il sovraccarico delle macchine in modo da non avere down 
@@ -78,8 +79,29 @@
 - VM = server completo
 - Container = applicazione
 
+# Glue job *
+- è un processo ETL (Extract, Transform, Load) gestito da aws.
+- Aiuta a capire i dati, suggerisce trasformazioni e genera codice ETL in modo da dedicare meno tempo per la codifica manuale.
+- Esegue processi ETL in modo flessibile in una piattaforma spark scalabile assegnando automaticamente le risorse necessarie per completarli.
+- Include un catalogo dati, un repository di metadati centrale.
+- Un motore ETL in grado di generare automaticamente codice python.
+- Un motore flessibile che gestisce la risoluzione delle dipendense il monitoraggio dei processi e i nuovi tentativi.
+- Insieme questi elementi facilitano una parte di lavoro pesante come individuazione, categorizzazione, pulizia, arricchimento e spostamento dei dati.
+- Rileva automaticamente i dati determina lo schema e crea il nostro catalogo dati.
+- Offre un'ntegrazione immediata con amazon athena, amazon EMR e amazon redshift spectrum
+- Il codice ETL creato da glue è semplicemente codice python modificabile, riutilizzabile e portatile.
+- è serverless quindi non ci sono risorse da gestire e paghi solo per quello che i nostri lavori consumano per l'esecuzione.
+- Lavora molto con spark
+# Lambda *
+- è un servizio serverless quando il nostro codice non è in esecuzione non ci sono costi.
+- Viene invocata da un servizio AWS quando accade un'evento. 
+- ES. carichiamo un file su S3 --> S3 rileva l'evento --> S3 chiama lambda --> lambda esegue il codice.
+- Serve per automatizzare piccole azioni ripetitive che altrimenti dovresti fare a mano o con una vm sempre accesa.
+- non
 
+# step function
 
+# event bridge
 
 
 
