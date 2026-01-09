@@ -50,7 +50,6 @@
 - Le funzionalità dell'auto scaling group sono quelli di scalare e incrementare le instanze EC2 in base al carico delle richieste e di rimuoverle in caso di cali
 - Possiamo definire un massimo e un minimo di macchine attive.
 - Usato con il load balancer().
-- 
 
 ## Load balancer *
 - Distribuisce traffico verso piu' EC2, quindi gestisce il sovraccarico delle macchine in modo da non avere down 
@@ -80,15 +79,33 @@
 - Container = applicazione
 
 # Glue *
-- è un processo ETL (Extract, Transform, Load) gestito da aws.
+- È un processo ETL (Extract, Transform, Load) gestito da aws.
 - aws gestisce tutto il backend del server e tutto il provisioning del software. 
 - Aiuta a capire i dati, suggerisce trasformazioni e genera codice ETL in modo da dedicare meno tempo per la codifica manuale.
 - Esegue processi ETL in modo flessibile in una piattaforma spark scalabile assegnando automaticamente le risorse necessarie per completarli.
 ## Catalogo
+### Database:
+- contenitore logico all'interno del catalogo dati all'interno di glue
+- Archivia le tabelle dei metadati
+- Essendo un database logico non esiste un vero è proprio database
+- Possiamo creare diverse tabelle in glue e possono essere tutte raggruppate in un database.
+- Queste tabelle contengono informazioni sui dati archiviati in varie sorgenti come Amazon S3  RDS, Redshifts ecc..
+- I dati resteranno nella sorgente originale, le tabelle conterranno solo le informazioni di quei dati.
+- Il raggrupamento di queste tabelle viene chiamato database
+- Raggruppando le tabelle in un database sarà più semplice gestire i metadati.
+### Tables
+### Crawlers
+### Connections
 - Include un catalogo dati, un repository di metadati centrale.
 - possiamo avere i nostri dati in qualunque database dentro aws, i nostri metadati ovunque essi siano possono essere archiviati dentro un catalogo in aws glue.
-- metadati informazioni correlate allo schema e alla fonte dei dati dove vengono correlati.
+- metadati: informazioni correlate allo schema e alla fonte dei dati dove vengono correlati.
 - Il catalogo dati può essere utilizzato per: Ottenere i metadati informativi sui tuoi dati, avere il monitoraggio degli accessi ecc(da approfondire)
+
+## ETL
+### ETL jobs
+### Triggers
+### Workflows
+- È possibile creare monitorare ed eseguire visivamente le pipeline ETL
 - Un motore ETL in grado di generare automaticamente codice python.
 - Un motore flessibile che gestisce la risoluzione delle dipendense il monitoraggio dei processi e i nuovi tentativi.
 - Insieme questi elementi facilitano una parte di lavoro pesante come individuazione, categorizzazione, pulizia, arricchimento e spostamento dei dati.
@@ -107,6 +124,7 @@
 # step function
 
 # event bridge
+
 
 
 
