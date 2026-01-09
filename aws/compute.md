@@ -78,6 +78,11 @@
 - VM = server completo
 - Container = applicazione
 
+# siti Alpitour turisanda, eden viaggi
+- problemi con dns
+- rca(approfondire)
+- domain controller(appro)
+
 # Glue *
 - È un processo ETL (Extract, Transform, Load) gestito da aws.
 - aws gestisce tutto il backend del server e tutto il provisioning del software. 
