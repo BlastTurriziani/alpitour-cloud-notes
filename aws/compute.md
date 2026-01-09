@@ -79,11 +79,16 @@
 - VM = server completo
 - Container = applicazione
 
-# Glue job *
+# Glue *
 - è un processo ETL (Extract, Transform, Load) gestito da aws.
+- aws gestisce tutto il backend del server e tutto il provisioning del software. 
 - Aiuta a capire i dati, suggerisce trasformazioni e genera codice ETL in modo da dedicare meno tempo per la codifica manuale.
 - Esegue processi ETL in modo flessibile in una piattaforma spark scalabile assegnando automaticamente le risorse necessarie per completarli.
+## Catalogo
 - Include un catalogo dati, un repository di metadati centrale.
+- possiamo avere i nostri dati in qualunque database dentro aws, i nostri metadati ovunque essi siano possono essere archiviati dentro un catalogo in aws glue.
+- metadati informazioni correlate allo schema e alla fonte dei dati dove vengono correlati.
+- Il catalogo dati può essere utilizzato per: Ottenere i metadati informativi sui tuoi dati, avere il monitoraggio degli accessi ecc(da approfondire)
 - Un motore ETL in grado di generare automaticamente codice python.
 - Un motore flessibile che gestisce la risoluzione delle dipendense il monitoraggio dei processi e i nuovi tentativi.
 - Insieme questi elementi facilitano una parte di lavoro pesante come individuazione, categorizzazione, pulizia, arricchimento e spostamento dei dati.
@@ -102,6 +107,7 @@
 # step function
 
 # event bridge
+
 
 
 
